@@ -31,3 +31,4 @@
 /Users/matpdev/Projects/AstroApi/obj/Debug/net8.0/AstroApi.genruntimeconfig.cache
 /Users/matpdev/Projects/AstroApi/obj/Debug/net8.0/ref/AstroApi.dll
 /Users/matpdev/Projects/AstroApi/bin/Debug/net8.0/Npgsql.dll
+/Users/matpdev/Projects/AstroApi/obj/Debug/net8.0/AstroApi.sourcelink.json
