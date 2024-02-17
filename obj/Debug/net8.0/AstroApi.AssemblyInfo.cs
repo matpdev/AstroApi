@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AstroApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fc49eadb1f19f0a0630543859eb739c8223f939")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7b0e09c97910f8f9a77599fd2998737cb01f424")]
 [assembly: System.Reflection.AssemblyProductAttribute("AstroApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AstroApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

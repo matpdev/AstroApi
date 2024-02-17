@@ -6,26 +6,32 @@ using AstroApi.DbControllers;
 using AstroApi.Models;
 using AstroApi.Utils.Extends;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AstroApi.Controllers
 {
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private DbController controller = new DbController();
-
         [Route("/account/login")]
         [HttpPost]
         public async Task<IActionResult> LoginUser(LoginModel? ites)
         {
             try
             {
-                await controller.database;
+                await using var context = new DbController();
 
-                if (controller.isInititiated)
-                {
-                    await controller.LoginUser(ites.Value.Email, ites.Value.Password);
-                }
+                var users = context.User.FirstOrDefault(e => e.Document == "1");
+
+                // foreach (var item in users)
+                // {
+                //     Console.WriteLine(item);
+                // }
+
+                // if (controller.isInititiated)
+                // {
+                //     await controller.LoginUser(ites.Value.Email, ites.Value.Password);
+                // }
                 return Ok($"Request Body As String: {ites}");
             }
             catch (System.Exception e)

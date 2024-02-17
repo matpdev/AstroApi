@@ -1,45 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AstroApi.Models.User
 {
-    public class AddressModel(
-        int id,
-        float lat,
-        float lon,
-        string state,
-        string city,
-        string district,
-        string address,
-        string number,
-        string zipcode
-    )
+    [Table("address")]
+    public class AddressModel()
     {
-        public int id = id;
-        public float lat = lat;
-        public float lon = lon;
-        public string? state = state;
-        public string? city = city;
-        public string? district = district;
-        public string? address = address;
-        public string? number = number;
-        public string? zipcode = zipcode;
-
-        public static AddressModel fromMap(Dictionary<string, dynamic> map)
-        {
-            return new AddressModel(
-                id: map["id"],
-                lat: map["lat"],
-                lon: map["long"],
-                state: map["state"],
-                city: map["state"],
-                district: map["district"],
-                address: map["address"],
-                number: map["number"],
-                zipcode: map["zipcode"]
-            );
-        }
+        public int Id { get; set; }
+        public float Lat { get; set; }
+        public float Lon { get; set; }
+        public string? State { get; set; }
+        public string? City { get; set; }
+        public string? District { get; set; }
+        public string? Address { get; set; }
+        public string? Number { get; set; }
+        public string? Zipcode { get; set; }
     }
 }

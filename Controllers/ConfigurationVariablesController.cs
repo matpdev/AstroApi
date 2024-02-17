@@ -17,8 +17,6 @@ namespace AstroApi.Controllers
 
             // Console.WriteLine(configuration.GetConnectionString("Test"));
 
-            Console.WriteLine();
-
             return configuration.GetSection(variableName).Value ?? "";
         }
     }

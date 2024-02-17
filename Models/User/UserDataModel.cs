@@ -1,47 +1,24 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AstroApi.Models.User
 {
-    public class UserDataModel(
-        int id,
-        string birthDate,
-        string description,
-        string openingYear,
-        string imageIcon,
-        string gender,
-        int houseCapacity,
-        List<AddressModel>? addresses
-    )
+    [Table("user_data")]
+    public class UserDataModel()
     {
-        public int id;
-        public string? birthDate;
-        public string? description;
-        public string? openingYear;
-        public string? imageIcon;
-        public string? gender;
-        public int? houseCapacity;
+        [Key]
+        public int Id { get; protected set; }
+        public string? BirthDate { get; set; }
+        public string? Description { get; set; }
+        public string? OpeningYear { get; set; }
+        public string? ImageIcon { get; set; }
+        public string? Gender { get; set; }
+        public int? HouseCapacity { get; set; }
 
-        public List<AddressModel>? addresses = [];
-        public UserModel userModel;
-
-        public static UserDataModel fromMap(Dictionary<string, dynamic> map)
-        {
-            return new UserDataModel(
-                id: map["id"],
-                birthDate: map["birth_date"],
-                description: map["description"],
-                openingYear: map["opening_year"],
-                imageIcon: map["image_icon"],
-                gender: map["gender"],
-                houseCapacity: map["house_capacity"],
-                addresses: (List<AddressModel>)
-                    (map["addresses"] as List<Dictionary<string, dynamic>>).Select(t =>
-                        AddressModel.fromMap(t)
-                    )
-            );
-        }
+        public List<AddressModel>? Addresses { get; set; }
     }
 }
